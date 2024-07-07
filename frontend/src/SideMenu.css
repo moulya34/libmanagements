@@ -1,0 +1,90 @@
+/* SideMenu.css */
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+.side-menu {
+  position: fixed;
+  top: 0;
+  left: -250px; /* Initially off-screen */
+  bottom: 0;
+  width: 250px;
+  background-color: #333; /* Dark background for the side menu */
+  padding-top: 60px; /* Adjust padding to align items */
+  transition: left 0.3s ease; /* Smooth transition for opening and closing */
+  z-index: 1000; /* Ensure it's above other content */
+  box-shadow: 2px 0 5px rgba(0,0,0,0.5); /* Add shadow for better visual effect */
+}
+
+.side-menu.open {
+  left: 0; /* Slide in when open */
+}
+
+.menu-icon {
+  position: fixed;
+  top: 20px;
+  left: 20px; /* Adjust positioning */
+  cursor: pointer;
+  z-index: 1100; /* Ensure icon is above the side menu */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background-color: #333;
+  border-radius: 50%;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Add shadow for the button */
+}
+
+.dots {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.dots span {
+  display: block;
+  width: 5px;
+  height: 5px;
+  background-color: #fff; /* White color for the dots */
+  margin: 3px 0;
+  border-radius: 50%;
+}
+
+.menu-items {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.menu-items a {
+  display: block;
+  color: #fff; /* White color for the menu items */
+  text-decoration: none;
+  padding: 15px;
+  transition: background-color 0.3s ease;
+}
+
+.menu-items a:hover {
+  background-color: #555; /* Darker background color on hover */
+}
+
+@media (max-width: 600px) {
+  .side-menu {
+    width: 200px; /* Narrower menu for smaller screens */
+  }
+
+  .menu-icon {
+    width: 35px;
+    height: 35px;
+  }
+
+  .dots span {
+    width: 4px;
+    height: 4px;
+    margin: 2px 0;
+  }
+}
